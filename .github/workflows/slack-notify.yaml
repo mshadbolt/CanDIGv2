@@ -1,4 +1,4 @@
-name: Slack Notify on Update
+name: Slack Notify on example.env Update
 
 on:
   pull_request:
