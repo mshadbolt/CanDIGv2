@@ -4,6 +4,8 @@ on:
   pull_request:
     branches:
         - develop
+    types:
+        - closed
     paths:
       - "etc/env/example.env"
 
@@ -11,6 +13,7 @@ jobs:
   notify-slack:
     name: Slack notify
     runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
     steps:
       - name: post to slack
         id: slack
